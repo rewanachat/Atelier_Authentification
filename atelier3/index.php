@@ -2,6 +2,12 @@
 // Démarre la session
 session_start();
 
+if(!isset($_SESSION['visites'])) {
+    $_SESSION['visites'] = 1; }
+else {
+    $_SESSION['visites']++; }
+
+
 // Vérifier si l'utilisateur est déjà connecté
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     header('Location: page_admin.php'); // Si l'utilisateur s'est déjà connecté alors il sera automatiquement redirigé vers la page protected.php
@@ -33,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Connexion</title>
+    <p>Nombre de visites : <?php echo $_SESSION['visites'];?</p>
 </head>
 <body>
     <h1>Atelier authentification par Session</h1>
