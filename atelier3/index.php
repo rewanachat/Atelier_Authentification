@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Connexion</title>
-    <p>Nombre de visites : <?php echo $_SESSION['visites'];?</p>
+    <p>Nombre de visites : <?php echo $_SESSION['visites'];?></p>
 </head>
 <body>
     <h1>Atelier authentification par Session</h1>
