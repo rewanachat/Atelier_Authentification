@@ -41,6 +41,8 @@ if (!isset($users[$usern]) || $users[$usern] != $mdp) {
     <p>Vous êtes connecté en tant que : <?php echo htmlspecialchars($_SERVER['PHP_AUTH_USER']); ?></p>
     <p?php if($usern == 'admin') :?>
         <p> Seul l'admin peut voir ceci, seul l'admin et nul autre</p>
+    <p?php else ?>
+        <p></p>
     <a href="../index.html">Retour à l'accueil</a>  
 </body>
 </html>
