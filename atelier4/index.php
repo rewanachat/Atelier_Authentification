@@ -1,8 +1,8 @@
 <?php
 // Nom d'utilisateur et mot de passe corrects
-$valid_username = 'admin';
-$valid_password = 'secret';
-
+$users = [ 
+'admin' => 'secret',
+'user' => 'utilisateur' ];
 // Vérifier si l'utilisateur a envoyé des identifiants
 if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) {
     // Envoyer un header HTTP pour demander les informations
@@ -11,6 +11,9 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) {
     echo 'Vous devez entrer un nom d\'utilisateur et un mot de passe pour accéder à cette page.';
     exit;
 }
+$user = $_SERVER['PHP_AUTH_USER'];
+$msp = $_SERVER['PHP_AUTH_PW'];
+
 
 // Vérifier les identifiants envoyés
 if ($_SERVER['PHP_AUTH_USER'] !== $valid_username || $_SERVER['PHP_AUTH_PW'] !== $valid_password) {
