@@ -39,6 +39,8 @@ if (!isset($users[$usern]) || $users[$usern] != $mdp) {
     <p>C'est le serveur qui vous demande un nom d'utilisateur et un mot de passe via le header WWW-Authenticate</p>
     <p>Aucun système de session ou cookie n'est utilisé pour cet atelier</p>
     <p>Vous êtes connecté en tant que : <?php echo htmlspecialchars($_SERVER['PHP_AUTH_USER']); ?></p>
+    <p?php if($usern == 'admin') :?>
+        <p> Seul l'admin peut voir ceci, seul l'admin et nul autre</p>
     <a href="../index.html">Retour à l'accueil</a>  
 </body>
 </html>
