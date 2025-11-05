@@ -12,7 +12,7 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) {
     exit;
 }
 $usern = $_SERVER['PHP_AUTH_USER'];
-$msp = $_SERVER['PHP_AUTH_PW'];
+$mdp = $_SERVER['PHP_AUTH_PW'];
 
 
 // Vérifier les identifiants envoyés
