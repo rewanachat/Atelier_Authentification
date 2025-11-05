@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $token = bin2hex(random_bytes(16)) // genere
+    $token = bin2hex(random_bytes(16)); // genere
     $_SESSION['authToken'] = $token; // stock
 
 
