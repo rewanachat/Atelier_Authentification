@@ -5,6 +5,8 @@ session_start();
 // Vérifier si l'utilisateur est déjà en possession d'un cookie valide (cookie authToken ayant le contenu 12345)
 // Si l'utilisateur possède déjà ce cookie, il sera redirigé automatiquement vers la page home.php
 // Dans le cas contraire il devra s'identifier.
+$token = bin2hex(random_bytes(16)) // genere
+    $_SESSION['authToken'] = $token; // stock
 
 if (isset($_COOKIE['authToken']) && $_COOKIE['authToken'] === $_SESSION['authToken']) { // on ajoute le token de la session
     header('Location: page_admin.php');
@@ -16,8 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $token = bin2hex(random_bytes(16)) // genere
-    $_SESSION['authToken'] = $token; // stock
+    
 
 
     // Vérification simple du username et de son password.
