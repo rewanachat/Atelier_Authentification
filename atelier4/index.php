@@ -16,7 +16,7 @@ $msp = $_SERVER['PHP_AUTH_PW'];
 
 
 // Vérifier les identifiants envoyés
-if ($_SERVER['PHP_AUTH_USER'] !== $valid_username || $_SERVER['PHP_AUTH_PW'] !== $valid_password) {
+if (!isset($users[$user] || $users[user] != $mdp) {
     // Si les identifiants sont incorrects
     header('WWW-Authenticate: Basic realm="Zone Protégée"');
     header('HTTP/1.0 401 Unauthorized');
